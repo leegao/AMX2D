@@ -1,108 +1,320 @@
-<p><img src="http://i560.photobucket.com/albums/ss44/leegao/site_logo.gif" style="border: 0px solid rgb(0, 0, 0); margin: 0px; text-align: center; display: block; float: left;"></p>
-<p><span style="font-size: 85%;"><strong><em><span style="color: rgb(128, 0, 0);">AMX2D&nbsp;</span></em><span style="color: rgb(128, 0, 0);">was created by Lee in order to simplify Lua scripting in CS2D&nbsp;by refactoring commonly used functions and recursively single out particular functions with unique names in order to eliminate the needs of awkward functions such as&nbsp; the lua <span style="color: rgb(0, 0, 0);"><span style="background-color: rgb(255, 255, 153);">string.sub()</span></span> and etc in order to determine what the commands will be partitioned down into.</span></strong></span></p>
+Welcome to the AMX2D API Document
 
-<p>&nbsp;</p>
-<p><span style="color: rgb(128, 0, 0);"><span style="font-size: 100%;"><strong>Find out more at <a href="http://amx2d.co.cc/" target="_blank"><span style="font-size: 115%;">http://amx2d.co.cc/</span></a></strong></span></span></p>
-<p>&nbsp;</p>
-<table cellspacing="1" cellpadding="1" align="left" width="400" style="margin: 0px auto;" class="pbSortable pbNoBorder">
-<tbody>
-<tr>
-<td style="text-align: center;">
-<p><object width="400" height="267"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=4117417&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=1&amp;color=ff9933&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=4117417&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=1&amp;color=ff9933&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="267"></embed></object></p>
-<p><strong><span style="font-size: 150%;">Gun Game Preview Demo -</span> <span style="color: rgb(255, 102, 0);"><span style="font-size: 150%;">AMX2D</span></span></strong></p>
-<hr>
-<p style="text-align: left;"><strong><span style="font-size: 150%;"><span style="font-size: 100%;"><span style="font-size: 85%;"><span style="font-size: 75%;">This is a preview of the <span style="color: rgb(255, 102, 0);">AMX2D&nbsp;</span><a href="/Gun-Game-Mod"><u>Gun Game Mod</u></a>. The official release will have over 40 different commands including player commands and admin commands, as well as a whole set of features that will blow you away.</span></span></span></span></strong></p>
+AMX2D was created by Lee in order to simplify Lua scripting in CS2D by refactoring commonly used functions and recursively single out particular functions with unique names in order to eliminate the needs of awkward functions such as  the lua string.sub() and etc in order to determine what the commands will be partitioned down into.
 
-</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<h2 style="text-align: center;">&nbsp;</h2>
-<h2 style="text-align: center;"><span style="color: rgb(255, 102, 0);"><span style="font-size: 200%;"><strong>AMX2D&nbsp;API</strong></span></span><span style="font-size: 200%;"><strong>:</strong></span></h2>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<table cellspacing="1" cellpadding="1" align="center" width="353" style="margin: 0px auto;" class="pbSortable pbNoBorder">
-<tbody>
-<tr>
-<td style="text-align: center;"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"><a href="/Core">Core</a></strong></span></span></td>
+Find out more at http://amx2d.co.cc/
 
-<td style="text-align: center;"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span><a href="/Mods"><span style="font-size: 150%;"><strong>Mods</strong></span></a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/Basic"><span style="font-size: 150%;"><strong>Basic</strong></span></a></td>
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/Acts"><strong><span style="font-size: 150%;">Acts</span></strong></a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/Compat"><span style="font-size: 150%;"><strong>Compat</strong></span></a></td>
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/Cron"><span style="font-size: 150%;"><strong>Cron</strong></span></a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/Globals"><span style="font-size: 150%;"><strong>Globals</strong></span></a></td>
+-------
 
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/Help"><span style="font-size: 150%;"><strong>Help</strong></span></a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/Menus"><span style="font-size: 150%;"><strong>Menus</strong></span></a></td>
-<td style="text-align: center;"><a href="Core"><span style="font-family: Tahoma;"><span style="font-size: 150%;"><strong><img height="8" width="8" src="http://i560.photobucket.com/albums/ss44/leegao/favicon.png" style="border: 2px solid rgb(0, 0, 0); margin: 0px 5px;"></strong></span></span></a><a href="/UsersAuth"><span style="font-size: 150%;"><strong>Users/Auth</strong></span></a></td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p style="text-align: center;"><u><span style="font-size: 130%;"><strong>Table of Content</strong></span></u></p>
-<p>&nbsp;</p>
-<p style="text-align: center;"><table style="background:transparent;border:none;margin:0;padding:0"><tr style="background:transparent;border:none;margin:0;padding"><td style="background:transparent;border:none;margin:0;padding"><div class="toc"><ol type="1"><ol type="a"><li><a href="#HowToMakeaModwithoutdoingtoomuchwork">How To Make a Mod without doing too much work?</a></li><li><a href="#WhattoExpect">What to Expect?</a></li><li><a href="#Sponsors">Sponsors:</a></li></ol></li></ol></li></div></td></tr></table><br clear="left" /></p>
+How To Make a Mod without doing too much work?
 
-<p>&nbsp;</p>
-<hr>
-<p>&nbsp;</p>
-<a name="HowToMakeaModwithoutdoingtoomuchwork"></a>
-<h2>How To Make a Mod without doing too much work?</h2>
-<p>&nbsp;</p>
-<p><span id="ctl00_ctl00_MasterContent_Content_wikiSourceLabel">Have you ever thought about how hard it was to create decent mods for CS2D? If you are looking for an easier way to create your mods without having to worry about all of that internal stuff, and just concentrate on what the mod should be doing, then this script may help save you hours of development time.</span></p>
-<p>&nbsp;</p>
-<p><span id="ctl00_ctl00_MasterContent_Content_wikiSourceLabel">For example, let's just go ahead and write a mod that echos what you say.</span></p>
-<p>&nbsp;</p>
-<p><span id="ctl00_ctl00_MasterContent_Content_wikiSourceLabel">Here, we want to type in "/echo Hello World" in the game and have it display the message "Server echoed: Hello World" to all of the users. Then we want to have an administrator logged in with a privilege "group" of 'admin' or higher to be able to change the echo to "Test? Hello World" text by typing @echo_prefix Test?.</span></p>
-<p>&nbsp;</p>
-<p><span id="ctl00_ctl00_MasterContent_Content_wikiSourceLabel">So in the "Enhanced System" you would only need to write 9 lines of code, of which only <b>4</b> lines actually do something, and only <b>2</b> lines are actual game logic.</span></p>
+ 
 
-<p>&nbsp;</p>
-<p><span style="font-size: 85%;"><strong>AMX2D&nbsp;Echo Command</strong></span></p>
-<p><span><script type="text/javascript" src="http://snipt.net/embed/c1127255743ab7e13e780a3e36134037"></script></span></p>
-<p>&nbsp;</p>
-<p><span>Amazingly enough, this does much more then meets the eyes. The first line automatically tells AMX2D&nbsp;that a new mod called echo will be initialized. Once done, you will be able to use all of the functionalities of AMX2D by just calling echo. So to create a new server variable, we would just call echo.var("prefix", "some text", "type"). This also creates a new admin function that lets you set the value of echo.prefix (which is created using the mod.var function) in game by typing in</span> <span style="background-color: rgb(255, 255, 153);">@echo_prefix New Text</span> further more, whenever you type in <span style="background-color: rgb(255, 255, 153);">!echo</span> now, the server will automaticall echo out what you typed in as well as the echo.prefix variable. All in all making this easier than words.</p>
+Have you ever thought about how hard it was to create decent mods for CS2D? If you are looking for an easier way to create your mods without having to worry about all of that internal stuff, and just concentrate on what the mod should be doing, then this script may help save you hours of development time.
 
-<p>&nbsp;</p>
-<p>On the contrary, here's the none AMX2D&nbsp;code. You will see that this is not only longer, it is tenfolds harder to understand as well.</p>
-<p>&nbsp;</p>
-<p><span style="font-size: 85%;"><strong>Non-AMX2D&nbsp;Echo Command</strong></span></p>
-<p><script type="text/javascript" src="http://snipt.net/embed/ae4ef8d3ed87a74e822fd264aa84d594"></script></p>
-<p>&nbsp;</p>
-<p><span id="ctl00_ctl00_MasterContent_Content_wikiSourceLabel">As you can clearly see, not only is the enhanced version tons shorter, it is also semantic in nature. People with no prior skills in programming will be able to get an idea of what is going on even if they have no idea what "Lua" means.</span></p>
-<p>&nbsp;</p>
-<hr>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+ 
 
-<a name="WhattoExpect"></a>
-<h2><b>What to Expect?</b></h2>
-<p><strong><span style="font-size: 85%;"><em>&nbsp;&nbsp;&nbsp;&nbsp; Here are just a few of the features that you will be grateful for in AMX2D, whether you're a developer or simply someone who wants to run a small server</em></span></strong></p>
-<ul>
-<li><u><strong>Ease of use</strong></u> - once you download <em>AMX2D</em>, the only steps needed to make it run with the default installation of the <em>AMX2D&nbsp;</em>GunGame is to extract the files and copy + paste them into you <span style="background-color: rgb(255, 255, 153);">CS2D/sys/lua/</span> Folder</li>
+For example, let's just go ahead and write a mod that echos what you say.
 
-<li><u><strong>Vast amount of mods and support</strong></u> - I will personally help you with any problems that you might face. To get support on <em>AMX2D</em>, please go to our support forum at <a target="_blank" href="http://amx2d.co.cc/">http://amx2d.co.cc/</a></li>
-<li><u><strong>Cross Compatibility</strong></u> - If you need to run an <em>AMX2D&nbsp;</em>mod and a regular mod together at the same time, then you're in luck because <em>AMX2D&nbsp;</em>automatically determines whether a module is an <em>AMX2D&nbsp;Mod</em> or a regular lua script, so rest assured that all of your old scripts will be able to run on the new system.</li>
+ 
 
-<li><u><strong>Bootstrapping multiple mods</strong></u> - And more then that, having the ability to define "<em>Mod Sets</em>" so you can actually switch around the different mods that you want to have. For example, you may run a default installation of <em>AMX2D&nbsp;</em>and decide to disable all of the extra mods for a light weight clan server. But when you need to turn it into a GunGame server, all you would have to type is <span style="background-color: rgb(255, 255, 153);">@amx2d gg</span> and the server will automatically restart with the gungame modsets up and running.</li>
-<li><u><strong>Easy to use Help system</strong></u> - <em>AMX2D&nbsp;</em>automatically recognizes the set of <em>acts</em> and <em>admacts</em> (The say commands) within the game and will create a help item for each and every one of them using the default core module <span style="background-color: rgb(255, 255, 153);">help.lua</span>. It does this by traversing through the table that holds the <em>acts</em>/<em>admacts</em> keys and looking in the <span style="background-color: rgb(255, 255, 153);">CS2D/sys/lua/amx2d/help/</span> folder to see if there's a helpfile there. If not, then it will at least tell you whether you are allowed to use this command of not. To use this system, simply type in <span style="background-color: rgb(255, 255, 153);">!help</span> or <span style="background-color: rgb(255, 255, 153);">?</span> in game. To get a list of all of the commands with a specific prefix, such as gg for gungame commands, use <span style="background-color: rgb(255, 255, 153);">!help gg</span> or <span style="background-color: rgb(255, 255, 153);">?gg</span>. To get the full instructions on a command, such as <span style="background-color: rgb(255, 255, 153);">@echo</span>, use <span style="background-color: rgb(255, 255, 153);">!help echo</span> or <span style="background-color: rgb(255, 255, 153);">?echo</span>.</li>
+Here, we want to type in "/echo Hello World" in the game and have it display the message "Server echoed: Hello World" to all of the users. Then we want to have an administrator logged in with a privilege "group" of 'admin' or higher to be able to change the echo to "Test? Hello World" text by typing @echo_prefix Test?.
 
-<li><u><strong>Acts and AdmActs</strong></u> - The core of <em>AMX2D&nbsp;</em>is its ability to differentiate between different types of acts without you having to do a bunch of if statements in either the <span style="background-color: rgb(255, 255, 153);">parse hook</span> or the <span style="background-color: rgb(255, 255, 153);">say hook</span>. The idea was that in a given server, the operator would not want everyone to be able to use the commands he has written, but he would also want to not use them via console because then he would have to use the <em>RCON</em>. And even more drastically, he would not want others to be able to use the RCON&nbsp;too since it would make them able to take full control of the server, but he would want a select few to be able to use these. And this is where <em>AMX2D&nbsp;</em>comes to the rescue.</li>
-<li><u><strong>Advanced User system</strong></u> - As said before, the major benefit of using <em>AMX2D&nbsp;</em>over just regular server administration is its ability to differentiate different commands and acts into different levels of access privileges. For example, the default installation comes with 3 default user levels :&nbsp;<strong>SuperAdmin</strong>, <strong>Admin</strong>, and <strong>Users</strong>. These are defined in <span style="background-color: rgb(255, 255, 153);">CS2D/sys/lua/amx2d/settings/priv.cfg</span> and they will partition the access of the server differently. For example, only a <strong>SuperAdmin</strong> can ban people but regular <strong>Admin</strong>s can kick people, but not ban, they can slap people but they can't change other's authority levels. On top of this, new users can register, login, and see a list of commands that they are allowed to use via <span style="background-color: rgb(255, 255, 153);">!login Usernam Password</span>, <span style="background-color: rgb(255, 255, 153);">!register Username Password</span>, <span style="background-color: rgb(255, 255, 153);">@authtype</span>, <span style="background-color: rgb(255, 255, 153);">@authaccess</span>, <span style="background-color: rgb(255, 255, 153);">@logout</span>, and so on.</li>
+ 
 
-<li><u><strong>Command Prefixes</strong></u> - If you are me then you would obviously like to be able to create shortcut commands to <em>CS2D</em>. For example, if you want to only type in <span style="background-color: rgb(255, 255, 153);">?</span> instead of !help, or <span style="background-color: rgb(255, 255, 153);">$</span> instead of <span style="background-color: rgb(255, 255, 153);">@say</span> then you're in luck because <em>AMX2D&nbsp;</em>can do that too. All you need to do is to go to <span style="background-color: rgb(255, 255, 153);">CS2D/sys/lua/amx2d/settings/cmds.cfg</span> and add the different shortcuts. For example, for the <strong><em>? = !help</em></strong> shortcut, you would add <strong><span style="background-color: rgb(255, 255, 153);">? false help</span></strong> . This means that whenever someone types in ?&nbsp;into the chatbox, it would automatically turn into (<span style="font-size: 115%;"><u><strong>! if false|@ if true</strong></u></span>, since it's false, into !) <span style="background-color: rgb(255, 255, 153);">!help</span>. For <em><strong>$&nbsp;= @say</strong></em>, you would add <strong><span style="background-color: rgb(255, 255, 153);">$&nbsp;true say &nbsp;</span></strong> which would end up turning into <span style="background-color: rgb(255, 255, 153);">@say</span> since the second word is true.</li>
+So in the "Enhanced System" you would only need to write 9 lines of code, of which only 4 lines actually do something, and only 2 lines are actual game logic.
 
-<li><strong>This is only the begining.</strong> <u>There are tons and tons more features in <em>AMX2D</em> that will make anyone's life, from people who do not care for Scripting and who just want an easy to manage server to those who contributes to the <em>CS2D&nbsp;</em>community by creating their own scripts</u><u>. <em>AMX2D&nbsp;</em>will prove to be invaluable to you.</u></li>
-</ul>
-<p>&nbsp;</p>
+ 
+
+AMX2D Echo Command
+
+init_mod("echo")
+
+echo.var("prefix","Server echoed: ", "svar")
+
+function act_echo(p, typ, cmd)
+     msg(p, echo.prefix..cmd)
+end
+
+return echo.name
+
+code hosted by snipt.net
+
+ 
+
+Amazingly enough, this does much more then meets the eyes. The first line automatically tells AMX2D that a new mod called echo will be initialized. Once done, you will be able to use all of the functionalities of AMX2D by just calling echo. So to create a new server variable, we would just call echo.var("prefix", "some text", "type"). This also creates a new admin function that lets you set the value of echo.prefix (which is created using the mod.var function) in game by typing in @echo_prefix New Text further more, whenever you type in !echo now, the server will automaticall echo out what you typed in as well as the echo.prefix variable. All in all making this easier than words.
+
+ 
+
+On the contrary, here's the none AMX2D code. You will see that this is not only longer, it is tenfolds harder to understand as well.
+
+ 
+
+Non-AMX2D Echo Command
+
+if _G.echo_say then return nil end
+if _G.echo_prefix then return nil end
+
+if not _G.addUsers then
+     function addUsers()
+          a few dozens of lines of code to create a users system
+     end
+
+     addhook("init","addUsers")
+end
+
+function echo_say(p, t)
+
+     if string.lower(string.sub(t, 1, 5)) == "/echo" then
+
+          if string.sub(t, 6, 6) ~= " " then
+               return nil
+          elseif #t <= 7 then
+               return nil
+          else
+               cmd = string.sub(t, 7)
+               msg2(p, echo_prefix..cmd)
+          end
+
+     elseif string.lower(string.sub(t, 1, 12)) == "@echo_prefix" then
+
+          if string.sub(t, 13, 13) ~= " " then
+               return nil
+          elseif #t <= 14 then
+               return nil
+          else
+               if users[p].privilege ~= "a" then
+                    msg2(p, "No admin privilege")
+                    return nil
+               else
+                    cmd = string.sub(t, 14)
+                    msg2(p, "Server svar echo_prefix changed to "..cmd)
+                    echo_prefix = cmd
+          end
+
+     elseif not _G.users then
+          .......
+     end
+     return 0
+end
+...
+
+code hosted by snipt.net
+
+ 
+
+As you can clearly see, not only is the enhanced version tons shorter, it is also semantic in nature. People with no prior skills in programming will be able to get an idea of what is going on even if they have no idea what "Lua" means.
+
+ 
+
+ 
+
+ 
+What to Expect?
+
+     Here are just a few of the features that you will be grateful for in AMX2D, whether you're a developer or simply someone who wants to run a small server
+
+    * Ease of use - once you download AMX2D, the only steps needed to make it run with the default installation of the AMX2D GunGame is to extract the files and copy + paste them into you CS2D/sys/lua/ Folder
+    * Vast amount of mods and support - I will personally help you with any problems that you might face. To get support on AMX2D, please go to our support forum at http://amx2d.co.cc/
+    * Cross Compatibility - If you need to run an AMX2D mod and a regular mod together at the same time, then you're in luck because AMX2D automatically determines whether a module is an AMX2D Mod or a regular lua script, so rest assured that all of your old scripts will be able to run on the new system.
+    * Bootstrapping multiple mods - And more then that, having the ability to define "Mod Sets" so you can actually switch around the different mods that you want to have. For example, you may run a default installation of AMX2D and decide to disable all of the extra mods for a light weight clan server. But when you need to turn it into a GunGame server, all you would have to type is @amx2d gg and the server will automatically restart with the gungame modsets up and running.
+    * Easy to use Help system - AMX2D automatically recognizes the set of acts and admacts (The say commands) within the game and will create a help item for each and every one of them using the default core module help.lua. It does this by traversing through the table that holds the acts/admacts keys and looking in the CS2D/sys/lua/amx2d/help/ folder to see if there's a helpfile there. If not, then it will at least tell you whether you are allowed to use this command of not. To use this system, simply type in !help or ? in game. To get a list of all of the commands with a specific prefix, such as gg for gungame commands, use !help gg or ?gg. To get the full instructions on a command, such as @echo, use !help echo or ?echo.
+    * Acts and AdmActs - The core of AMX2D is its ability to differentiate between different types of acts without you having to do a bunch of if statements in either the parse hook or the say hook. The idea was that in a given server, the operator would not want everyone to be able to use the commands he has written, but he would also want to not use them via console because then he would have to use the RCON. And even more drastically, he would not want others to be able to use the RCON too since it would make them able to take full control of the server, but he would want a select few to be able to use these. And this is where AMX2D comes to the rescue.
+    * Advanced User system - As said before, the major benefit of using AMX2D over just regular server administration is its ability to differentiate different commands and acts into different levels of access privileges. For example, the default installation comes with 3 default user levels : SuperAdmin, Admin, and Users. These are defined in CS2D/sys/lua/amx2d/settings/priv.cfg and they will partition the access of the server differently. For example, only a SuperAdmin can ban people but regular Admins can kick people, but not ban, they can slap people but they can't change other's authority levels. On top of this, new users can register, login, and see a list of commands that they are allowed to use via !login Usernam Password, !register Username Password, @authtype, @authaccess, @logout, and so on.
+    * Command Prefixes - If you are me then you would obviously like to be able to create shortcut commands to CS2D. For example, if you want to only type in ? instead of !help, or $ instead of @say then you're in luck because AMX2D can do that too. All you need to do is to go to CS2D/sys/lua/amx2d/settings/cmds.cfg and add the different shortcuts. For example, for the ? = !help shortcut, you would add ? false help . This means that whenever someone types in ? into the chatbox, it would automatically turn into (! if false|@ if true, since it's false, into !) !help. For $ = @say, you would add $ true say   which would end up turning into @say since the second word is true.
+    * This is only the begining. There are tons and tons more features in AMX2D that will make anyone's life, from people who do not care for Scripting and who just want an easy to manage server to those who contributes to the CS2D community by creating their own scripts. AMX2D will prove to be invaluable to you.
+
+
+AMX2D - Core
+
+ 
+
+The Core of AMX2D resides within amx2d/main.lua and contains the bootstrappers needed to initialize the core modules as well as a few essential commands needed by AMX2D. The main() supercedes all other functions in the lexical scope and can not be overloaded.
+
+ 
+
+Table of Content
+
+   1. AMX2D - Core
+         1. String: amx2d
+         2. String: initDir
+         3. String: conf_dir
+         4. String: core_dir
+         5. String: test_dir
+         6. String: mods_dir
+         7. Table: old_G
+         8. Function: main( AMX2D_Directory, Mod_Set )
+         9. Function: load( file )
+        10. Function:  core_init( )
+        11. Function:  hook_init()
+        12. Function:  hook_say( Player, Text )
+        13. Function:  reset()
+        14. AdmAct: @amx2d mod_set
+   2. Revisions
+         1. Complete Source Code
+
+
+ 
+
+ 
+String: amx2d
+
+Default Value: "r1.27"
+
+Specifies the existence of amx2d as the core (for any standalone that requires AMX2D dependencies) and gives the version value.
+ 
+String: initDir
+
+Default Value: "sys/lua/amx2d/"
+
+Gives you the directory of AMX2D. This should be the relative path from the CS2D directory to the amx2d folder
+
+ 
+String: conf_dir
+
+Default Value: "sys/lua/amx2d/settings/"
+
+Gives you the directory of AMX2D Settings. This should be the relative path from the CS2D directory to the settings folder
+
+ 
+String: core_dir
+
+Default Value: "sys/lua/amx2d/core/"
+
+Gives you the directory of AMX2D Core. This should be the relative path from the CS2D directory to the core folder
+
+ 
+String: test_dir
+
+Default Value: "sys/lua/amx2d/test/"
+
+Gives you the directory of AMX2D Tests. This should be the relative path from the CS2D directory to the test folder
+
+@Note: The need of this folder is deprecated since r0.13
+
+ 
+String: mods_dir
+
+Default Value: "sys/lua/amx2d/mods/"
+
+Gives you the directory of AMX2D Mods. This should be the relative path from the CS2D directory to the mods folder
+
+ 
+Table: old_G
+
+Default Value: _G
+
+This is a duplicate of the Lua Global table.
+
+@Note: The values of old_G will reflect those of _G over the course of program execution. The two will not differ from each other.
+
+ 
+Function: main( AMX2D_Directory, Mod_Set )
+
+This is the super function of all AMX2D functions and can not be overloaded.
+
+@Usage: in the main chunk, use main() to initialize AMX2D
+
+@Example:
+
+--server.lua
+local dir = "sys/lua/amx2d"
+dofile(dir.."main.lua")
+main(dir)
+
+view raw This Gist brought to you by GitHub.
+
+ 
+Parameter 	Required 	Default
+AMX2D_Directory 	No 	"sys/lua/amx2d"
+Mod_Set 	No 	io.open("mod.cfg"):read()
+
+ 
+
+ 
+
+ 
+Function: load( file )
+
+Takes a filename and loads the content into AMX2D and executes them in the main chunk.
+
+load can also take the filename with or without the .lua extension (IE: load("file") and load("file.lua") are the same), but the file itself ultimately must have a .lua extention
+
+If the file is not found or the script is not valid Lua, then the function will print out "Failed to load %Filename"
+
+@Usage: load("xxx.lua")
+
+@Return:  True/False based on whether the file initialized
+
+@Example:
+
+if load(mod_dir.."mod_quakeMod") then
+  print("mod_quakeMod.lua successfully loaded")
+end
+
+view raw This Gist brought to you by GitHub.
+ 
+
+ 
+Parameter 	Required 	Default
+file 	yes 	nil
+
+ 
+Function:  core_init( )
+
+@Auxilary:  This is automatically invoked.
+
+Takes each line in the core.cfg file and loads it into the main chunk via load
+
+ 
+Function:  hook_init()
+
+@Auxilary: This is automatically invoked.
+
+Completely initialize the AMX2D  systems followed by initializing the mod preprocessors.
+
+Also invokes the AMX2D  Debugger if sv.debug is set to true.
+
+ 
+Function:  hook_say( Player, Text )
+
+@Auxilary:  This is automatically invoked.
+
+This function is hooked onto the CS2D  say events and is called each time a say event is invoked.
+
+It iterates through a list of all Command prefixes and if any matches, it goes ahead and passes the text and player into parseCmd()
+
+ 
+Function:  reset()
+
+@Untested:  Do not use this function. Use @amx2d as an admact instead.
+
+Takes the original global table cached in main() and replaces the _G  table with it.
+
+ 
+AdmAct: @amx2d mod_set
+
+This command resets the current server and if given a parameter, switches the Mod Set to the givent mod set in settings/mod.cfg. If nothing is passed in, will switch back to mods.cfg,
+
+@Access:  SuperAdmins only
+
+@Usage: @amx2d modset - will switch the default modset to modset.cfg
+
+ 
+Parameter 	Required 	Default
+mod_set 	no 	"mods"
+
+ 
+
+ 
+
+ 
+
+ 
+Revisions
+
+ 
+Version 	Notes
+27 	Initial Version - SVN Notes: Added a whole new table section
+
+ 
