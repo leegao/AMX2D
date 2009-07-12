@@ -1,0 +1,164 @@
+Welcome to the AMX2D API Document
+
+ 
+
+AMX2D was created by Lee in order to simplify Lua scripting in CS2D by refactoring commonly used functions and recursively single out particular functions with unique names in order to eliminate the needs of awkward functions such as  the lua string.sub() and etc in order to determine what the commands will be partitioned down into.
+
+ 
+
+Find out more at http://amx2d.co.cc/
+
+ 
+
+Gun Game Preview Demo - AMX2D
+
+This is a preview of the AMX2D Gun Game Mod. The official release will have over 40 different commands including player commands and admin commands, as well as a whole set of features that will blow you away.
+
+ 
+ 
+AMX2D API:
+
+ 
+
+ 
+Core 	Mods
+Basic 	Acts
+Compat 	Cron
+Globals 	Help
+Menus 	Users/Auth
+
+ 
+
+ 
+
+Table of Content
+
+ 
+
+         1. How To Make a Mod without doing too much work?
+         2. What to Expect?
+         3. Sponsors:
+
+
+ 
+
+ 
+How To Make a Mod without doing too much work?
+
+ 
+
+Have you ever thought about how hard it was to create decent mods for CS2D? If you are looking for an easier way to create your mods without having to worry about all of that internal stuff, and just concentrate on what the mod should be doing, then this script may help save you hours of development time.
+
+ 
+
+For example, let's just go ahead and write a mod that echos what you say.
+
+ 
+
+Here, we want to type in "/echo Hello World" in the game and have it display the message "Server echoed: Hello World" to all of the users. Then we want to have an administrator logged in with a privilege "group" of 'admin' or higher to be able to change the echo to "Test? Hello World" text by typing @echo_prefix Test?.
+
+ 
+
+So in the "Enhanced System" you would only need to write 9 lines of code, of which only 4 lines actually do something, and only 2 lines are actual game logic.
+
+ 
+
+AMX2D Echo Command
+
+init_mod("echo")
+
+echo.var("prefix","Server echoed: ", "svar")
+
+function act_echo(p, typ, cmd)
+     msg(p, echo.prefix..cmd)
+end
+
+return echo.name
+
+code hosted by snipt.net
+
+ 
+
+Amazingly enough, this does much more then meets the eyes. The first line automatically tells AMX2D that a new mod called echo will be initialized. Once done, you will be able to use all of the functionalities of AMX2D by just calling echo. So to create a new server variable, we would just call echo.var("prefix", "some text", "type"). This also creates a new admin function that lets you set the value of echo.prefix (which is created using the mod.var function) in game by typing in @echo_prefix New Text further more, whenever you type in !echo now, the server will automaticall echo out what you typed in as well as the echo.prefix variable. All in all making this easier than words.
+
+ 
+
+On the contrary, here's the none AMX2D code. You will see that this is not only longer, it is tenfolds harder to understand as well.
+
+ 
+
+Non-AMX2D Echo Command
+
+if _G.echo_say then return nil end
+if _G.echo_prefix then return nil end
+
+if not _G.addUsers then
+     function addUsers()
+          a few dozens of lines of code to create a users system
+     end
+
+     addhook("init","addUsers")
+end
+
+function echo_say(p, t)
+
+     if string.lower(string.sub(t, 1, 5)) == "/echo" then
+
+          if string.sub(t, 6, 6) ~= " " then
+               return nil
+          elseif #t <= 7 then
+               return nil
+          else
+               cmd = string.sub(t, 7)
+               msg2(p, echo_prefix..cmd)
+          end
+
+     elseif string.lower(string.sub(t, 1, 12)) == "@echo_prefix" then
+
+          if string.sub(t, 13, 13) ~= " " then
+               return nil
+          elseif #t <= 14 then
+               return nil
+          else
+               if users[p].privilege ~= "a" then
+                    msg2(p, "No admin privilege")
+                    return nil
+               else
+                    cmd = string.sub(t, 14)
+                    msg2(p, "Server svar echo_prefix changed to "..cmd)
+                    echo_prefix = cmd
+          end
+
+     elseif not _G.users then
+          .......
+     end
+     return 0
+end
+...
+
+code hosted by snipt.net
+
+ 
+
+As you can clearly see, not only is the enhanced version tons shorter, it is also semantic in nature. People with no prior skills in programming will be able to get an idea of what is going on even if they have no idea what "Lua" means.
+
+ 
+
+ 
+
+ 
+What to Expect?
+
+     Here are just a few of the features that you will be grateful for in AMX2D, whether you're a developer or simply someone who wants to run a small server
+
+    * Ease of use - once you download AMX2D, the only steps needed to make it run with the default installation of the AMX2D GunGame is to extract the files and copy + paste them into you CS2D/sys/lua/ Folder
+    * Vast amount of mods and support - I will personally help you with any problems that you might face. To get support on AMX2D, please go to our support forum at http://amx2d.co.cc/
+    * Cross Compatibility - If you need to run an AMX2D mod and a regular mod together at the same time, then you're in luck because AMX2D automatically determines whether a module is an AMX2D Mod or a regular lua script, so rest assured that all of your old scripts will be able to run on the new system.
+    * Bootstrapping multiple mods - And more then that, having the ability to define "Mod Sets" so you can actually switch around the different mods that you want to have. For example, you may run a default installation of AMX2D and decide to disable all of the extra mods for a light weight clan server. But when you need to turn it into a GunGame server, all you would have to type is @amx2d gg and the server will automatically restart with the gungame modsets up and running.
+    * Easy to use Help system - AMX2D automatically recognizes the set of acts and admacts (The say commands) within the game and will create a help item for each and every one of them using the default core module help.lua. It does this by traversing through the table that holds the acts/admacts keys and looking in the CS2D/sys/lua/amx2d/help/ folder to see if there's a helpfile there. If not, then it will at least tell you whether you are allowed to use this command of not. To use this system, simply type in !help or ? in game. To get a list of all of the commands with a specific prefix, such as gg for gungame commands, use !help gg or ?gg. To get the full instructions on a command, such as @echo, use !help echo or ?echo.
+    * Acts and AdmActs - The core of AMX2D is its ability to differentiate between different types of acts without you having to do a bunch of if statements in either the parse hook or the say hook. The idea was that in a given server, the operator would not want everyone to be able to use the commands he has written, but he would also want to not use them via console because then he would have to use the RCON. And even more drastically, he would not want others to be able to use the RCON too since it would make them able to take full control of the server, but he would want a select few to be able to use these. And this is where AMX2D comes to the rescue.
+    * Advanced User system - As said before, the major benefit of using AMX2D over just regular server administration is its ability to differentiate different commands and acts into different levels of access privileges. For example, the default installation comes with 3 default user levels : SuperAdmin, Admin, and Users. These are defined in CS2D/sys/lua/amx2d/settings/priv.cfg and they will partition the access of the server differently. For example, only a SuperAdmin can ban people but regular Admins can kick people, but not ban, they can slap people but they can't change other's authority levels. On top of this, new users can register, login, and see a list of commands that they are allowed to use via !login Usernam Password, !register Username Password, @authtype, @authaccess, @logout, and so on.
+    * Command Prefixes - If you are me then you would obviously like to be able to create shortcut commands to CS2D. For example, if you want to only type in ? instead of !help, or $ instead of @say then you're in luck because AMX2D can do that too. All you need to do is to go to CS2D/sys/lua/amx2d/settings/cmds.cfg and add the different shortcuts. For example, for the ? = !help shortcut, you would add ? false help . This means that whenever someone types in ? into the chatbox, it would automatically turn into (! if false|@ if true, since it's false, into !) !help. For $ = @say, you would add $ true say   which would end up turning into @say since the second word is true.
+    * This is only the begining. There are tons and tons more features in AMX2D that will make anyone's life, from people who do not care for Scripting and who just want an easy to manage server to those who contributes to the CS2D community by creating their own scripts. AMX2D will prove to be invaluable to you.
+
+ 

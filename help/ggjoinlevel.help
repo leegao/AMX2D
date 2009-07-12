@@ -1,0 +1,4 @@
+@gg_joinlevel [0|1|2] - Sets the level of new players. 
+0 - At the Server's lowest level. 
+1 - At the Player's lowest level. 
+2 - At the Player's average level

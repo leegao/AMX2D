@@ -1,0 +1,1 @@
+[! or @]gg_specweapons [weapon_name1] [weapon_name2]... - Returns a list of special weapons that auto levels the user or if called using the admin @, sets the special weapons
